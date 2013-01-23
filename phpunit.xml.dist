@@ -1,5 +1,5 @@
 <testsuites>
     <testsuite name="JSONCom Test Suite">
-        <directory>./tests/*Test.php</directory>
+        <directory suffix="Test.php">./tests/</directory>
     </testsuite>
 </testsuites>
