@@ -54,6 +54,7 @@ class JSONCom {
      * @param string $string String to remove comments from.
      * @return string Returns the comments-stripped string.
      * @private
+     * @codeCoverageIgnore
      */
     protected static function removeComments($string)
     {
