@@ -67,4 +67,7 @@ class JSONCom {
 
 }
 
+/**
+ * @codeCoverageIgnore
+ */
 class JSONComInvalidArgumentException extends \InvalidArgumentException{}
