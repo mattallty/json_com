@@ -38,7 +38,14 @@ class JSONCom {
         }
         
         $json = self::removeComments($string);
-        return json_decode($json, $assoc, $depth, $options);
+        
+        // PHP > 5.4.0 supports the 4th parameter ($options)
+        if(version_compare(PHP_VERSION, '5.4.0', '>=')) {
+            return json_decode($json, $assoc, $depth, $options);
+        }
+        
+        // PHP < 5.4.0 does not support the 4th parameter
+        return json_decode($json, $assoc, $depth);
     }
     
     /**
@@ -48,7 +55,7 @@ class JSONCom {
      * @return string Returns the comments-stripped string.
      * @private
      */
-    private static function removeComments($string)
+    protected static function removeComments($string)
     {
         if(!is_string($string) || empty($string)) {
             return '';
